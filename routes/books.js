@@ -6,6 +6,7 @@ const { ensureAuth } = require('../middleware/auth')
 //add back ensure auth
 router.get('/', booksController.viewBooks)
 
-
+router.post('/addBook', booksController.addBook)
 
 module.exports = router
+

@@ -6,12 +6,31 @@ module.exports = {
             console.log(Book)
             Book.find().sort({likes: -1})
             .then(data => {
-                response.render('bookvote.ejs', { info: data })
+                response.render('books.ejs', { info: data })
             })
         }catch(err){
             console.log(err)
         }
     },
+
+    addBook: async (req, res) => {
+        try{
+        await Book.create(
+            {
+                    name: req.body.name,
+                    author: req.body.author,
+                    thumbnail: req.body.thumbnail,
+                    likes: 0,
+                   
+            },
+        )
+            console.log('Book has been added!')
+            res.json('Marked Incomplete')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    
 
 
 
