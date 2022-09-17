@@ -8,5 +8,9 @@ router.get('/', booksController.viewBooks)
 
 router.post('/addBook', booksController.addBook)
 
+router.delete('/deleteBook', booksController.deleteBook)
+
+router.put('/addLike', booksController.addLike)
+
 module.exports = router
 

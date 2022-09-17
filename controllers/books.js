@@ -30,9 +30,35 @@ module.exports = {
             console.log(err)
         }
     },
+
+    deleteBook: async (req, res) => {
+        console.log(req.body.name)
+        try{
+            await Book.findOneAndDelete({name: req.body.name})
+            console.log('Book Deleted')
+            res.json('Book Deleted')
+        }catch(err){
+            console.log(err)
+        }
     
-
-
+    },
+    
+    addLike: async (req, res) => {
+        try{
+         await Book.updateOne({name: req.body.name},{
+            $set: {
+                likes:req.body.likes + 1
+              }
+        },{
+            sort: {_id: -1},
+            upsert: true
+        })
+        console.log('Added Like')
+        res.json('Added Like')
+    }catch(err){
+        console.log(err)
+    }
+},
 
 
 
