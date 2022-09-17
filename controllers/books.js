@@ -21,6 +21,7 @@ module.exports = {
                     author: req.body.author,
                     thumbnail: req.body.thumbnail,
                     likes: 0,
+                    userId: req.user.id
                    
             },
         )

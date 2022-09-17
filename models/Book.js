@@ -21,10 +21,10 @@ const BookSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  //change userid required back to true
+ 
   userId: {
     type: String,
-    required: false
+    required: true
   }
 })
 
