@@ -1,14 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shelf Control</title>
-</head>
-<body>
-    <h1>Welcome Wine, Women, and Weading</h1>
-    <a href="/login"> Login</a>
-    <a href="/signup"> Signup</a>
-</body>
-</html>
+<%- include('partials/header') -%>
+
+<div class="d-grid gap-2 col-6 mx-auto m-5" >
+
+    <a class="btn btn-info btn-lg text-light mb-2" href="/login" role="button"> Login</a>
+        
+    <a class="btn btn-info btn-lg text-light" href="/signup" role="button"> Signup</a>
+    
+</div>
+        
+
+<img class="img-fluid mx-auto d-block" src="/imgs/undraw_bookshelves_re_lxoy.svg" alt="">
+
+
+<%- include('partials/footer') -%>
