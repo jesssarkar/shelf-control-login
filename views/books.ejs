@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    	<meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Shelf Control</title>
+<%- include('partials/header') -%>
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<!-- 	<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css"> -->
-</head>
-<body>
-
-	<h1>Which Book?</h1>
+	<h1 class="text-center">Search For A Book To Add</h1>
 	<input type="text" name="title" placeholder="title" id="titleInput">
 	<input type="text" name="author" placeholder="author" id="authorInput">
 	<button type="button" name="button">Get Book</button>
@@ -24,6 +12,8 @@
 	<h3></h3>
 
     </div>
+
+    <h3>Vote For This Month's Selection</h3>
 
     <ul class="books">
     <% for(let i=0; i < info.length; i++) {%>
@@ -41,7 +31,5 @@
 
     <a href="/logout">Logout</a>
 
-    <script src="js/main.js"></script>
-    
-</body>
-</html>
+
+    <%- include('partials/footer') -%>

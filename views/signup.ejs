@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shelf Control</title>
-</head>
-<body>
+<%- include('partials/header') -%>
+
+<main class="container">
+    <div class="row justify-content-center">
+        <section class="col-md-6 mt-2">
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-info"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
     <form action="/signup" method="POST">
-        <input type="text" name="userName" placeholder="User Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm Password">
-        <input type="submit">
+        <div class="mb-3">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" name="userName" class="form-control" id="userName">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="password">
+            <div id="passwordHelp" class="form-text">Password must be at least 8 characters long</div>
+        </div>
+        <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" name="confirmPassword" class="form-control" id="confirmPassword">
+        </div>
+        <button type="submit" class="btn text-light btn-info btn-lg">Submit</button>
     </form>
-</body>
-</html>
+    <img class="img-fluid mx-auto pt-5" src="/imgs/undraw_book_lover_re_rwjy.svg" alt="">
+        </section>
+    </div>
+</main>
+
+ <%- include('partials/footer') -%>

@@ -1,5 +1,7 @@
 <%- include('partials/header') -%>
-
+<main class="container">
+    <div class="row justify-content-center">
+      <section class="col-md-6 mt-2">
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -11,9 +13,29 @@
         <% }) %>    
     <% } %>
     <form action="/login" method="POST">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+        <div class="mb-3" >
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input 
+                type="email" 
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                name="email" 
+            >
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input 
+                type="password" 
+                class="form-control"
+                name="password" 
+                id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn text-light btn-info btn-lg">Submit</button>
     </form>
+    <img class="img-fluid mx-auto pt-5" src="/imgs/undraw_reading_re_29f8.svg" alt="">
+</section>
+</div>
+</main>
 
     <%- include('partials/footer') -%>
