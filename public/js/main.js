@@ -1,4 +1,3 @@
-document.querySelector('button').addEventListener('click', getBook)
 const deleteText = document.querySelectorAll('.fa-trash')
 const thumbText = document.querySelectorAll('.fa-thumbs-up')
 
@@ -10,52 +9,6 @@ Array.from(thumbText).forEach((element)=>{
     element.addEventListener('click', addLike)
 })
 
-
-function getBook(){
-    let title = document.getElementById('titleInput').value
-    let author = document.getElementById('authorInput').value
-
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=intitle:${title}+inauthor:${author}`)
-        .then(res => res.json())
-        .then(data => {
-          
-            document.querySelector('h2').innerText = data.items[0].volumeInfo.title
-            document.querySelector('img').src = data.items[0].volumeInfo.imageLinks.thumbnail
-            document.querySelector('h4').innerText = data.items[0].volumeInfo.authors
-            document.querySelector('h3').innerText = data.items[0].volumeInfo.description
-            
-            const button = document.createElement('button')
-                document.querySelector(".bookResult").appendChild(button)
-                button.addEventListener('click', addBook)
-        }
-            
-    
-        )
-        .catch(err => {
-            console.log(`error ${err}`)
-        });
-}
-
-async function addBook(){
-    try{
-    const response = await fetch('books/addBook', {
-        
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            name: document.querySelector('h2').innerText,
-            author: document.querySelector('h4').innerText,
-            thumbnail: document.querySelector('img').src,
-            
-        })
-    })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-    console.log(err)
-    }
-}
 
 async function deleteBook(){
     const bName = this.parentNode.childNodes[1].innerText

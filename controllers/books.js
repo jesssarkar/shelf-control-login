@@ -13,6 +13,10 @@ module.exports = {
         }
     },
 
+    viewSearch: (req,res)=>{
+        res.render('booksearch.ejs')
+    },
+
     addBook: async (req, res) => {
         try{
         await Book.create(
