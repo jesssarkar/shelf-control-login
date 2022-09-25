@@ -1,24 +1,37 @@
 <%- include('partials/header') -%>
 
-	
+<section id="bookVote" class="p-5 bg-info">
+    <div class="container">	
 
-    <h3>Vote For This Month's Selection</h3>
-
-    <ul class="books">
+    <h1 class="text-center text-white pb-5">Vote For This Month's Selection</h1>
+    
+    <div class="row g-4"></div>
+        
     <% for(let i=0; i < info.length; i++) {%>
-        <li class="book">
-            <span><%= info[i].name %></span>
-            <span><%= info[i].author %></span>
-            <span><img src=<%= info[i].thumbnail %>></span>
-            <span><%= info[i].likes %></span>
-            <span class='fa fa-thumbs-up'></span>
-            <span class='fa fa-trash'></span>
-            <span><%= info[i].description %></span>
-        </li>
+       
+        
+        <div class="card bg-light col-md-6 col-lg-3 mt-2" >
+        <div class="card-body text-center">
+        
+            <div><img class="" src=<%= info[i].thumbnail %>></div>
+            <div class="card-text mt-1"><%= info[i].name %></div>
+            <div class="card-text"n><%= info[i].author %></div>
+            <span class="my-1"><%= info[i].likes %></span><span> Votes</span>
+            <button class="vote btn btn-secondary text-light my-2">Vote</button><br>
+            <div class="bi bi-trash text-danger"></div>
+        
+    
+    </div>
+    </div>
+
     <% } %>
-    </ul>
 
-    <a href="/logout">Logout</a>
+</div>
+</div>
 
+</section>
+<div class="m-2">
+    <a class="btn btn-secondary btn-lg text-light" href="/logout" role="button"> Logout</a>
+</div>
     <script src="js/main.js"></script>
     <%- include('partials/footer') -%>

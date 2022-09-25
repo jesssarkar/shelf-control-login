@@ -1,12 +1,20 @@
 <%- include('partials/header') -%>
 
-<h1>WELCOME!!!!</h1>
+<div class="container">
+<div class="d-sm-flex align-items-center justify-content-between m-3">
+    <div>
+    <h1 class="text-secondary">WELCOME!</h1>
+    <h2 class="text-secondary">What Would You Like To Do?</h2>
 
-<a class="btn btn-primary" href="/books">Vote for a choice</a>
+<a class="btn btn-info btn-lg text-light m-1" href="/books">Vote for a Book</a>
 
-<a class="btn btn-primary" href="/books/booksearch">Search for a choice</a>
+<a class="btn btn-info btn-lg text-light m-1" href="/books/booksearch">Add a Book</a>
+</div>
+<img class="img-fluid mx-auto d-block mt-5" src="/imgs/undraw_reading_time_re_phf7.svg" alt="">
 
-<img class="img-fluid mx-auto d-block" src="/imgs/undraw_bookshelves_re_lxoy.svg" alt="">
-
-
+</div>
+</div>
+<div class="m-2">
+    <a class="btn btn-secondary btn-lg text-light" href="/logout" role="button"> Logout</a>
+</div>
 <%- include('partials/footer') -%>

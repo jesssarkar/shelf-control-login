@@ -1,5 +1,5 @@
-const deleteText = document.querySelectorAll('.fa-trash')
-const thumbText = document.querySelectorAll('.fa-thumbs-up')
+const deleteText = document.querySelectorAll('.bi-trash')
+const thumbText = document.querySelectorAll('.vote')
 
 Array.from(deleteText).forEach((element)=>{
     element.addEventListener('click', deleteBook)
@@ -11,8 +11,8 @@ Array.from(thumbText).forEach((element)=>{
 
 
 async function deleteBook(){
-    const bName = this.parentNode.childNodes[1].innerText
-    const bAuthor = this.parentNode.childNodes[3].innerText
+    const bName = this.parentNode.childNodes[3].innerText
+    const bAuthor = this.parentNode.childNodes[5].innerText
 
     console.log(bName)
     console.log(bAuthor)
@@ -34,8 +34,8 @@ async function deleteBook(){
 }
 
 async function addLike(){
-    const bName = this.parentNode.childNodes[1].innerText
-    const bAuthor = this.parentNode.childNodes[3].innerText
+    const bName = this.parentNode.childNodes[3].innerText
+    const bAuthor = this.parentNode.childNodes[5].innerText
     const tLikes = Number(this.parentNode.childNodes[7].innerText)
     
     try{

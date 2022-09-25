@@ -1,19 +1,31 @@
 <%- include('partials/header') -%>
+<main class="container">
+    <div class="row justify-content-center">
+      <section class="col-md-6 mt-2">
+<h1 class="text-center text-secondary">Search For A Book To Add</h1>
+<div class="mb-3">
+	<label for="booktitlesearch" class="form-label">Title</label>
+	<input type="text" class="form-control" name="title" id="titleInput">
+</div>
+<div class="mb-3">
+	<label for="bookauthorsearch" class="form-label">Author</label>
+	<input type="text" class="form-control" name="author" id="authorInput">
+</div>
+	<button type="button" name="button" class="btn text-light btn-info btn-lg mb-5">Get Book</button>
 
-<h1 class="text-center">Search For A Book To Add</h1>
-	<input type="text" name="title" placeholder="title" id="titleInput">
-	<input type="text" name="author" placeholder="author" id="authorInput">
-	<button type="button" name="button">Get Book</button>
-
-    <div class="bookResult">
+    <div class="bookResult mb-5">
+	<img src="" alt="">
 	<h2></h2>
 	<h4></h4>
-	<img src="" alt="">
 	<h3></h3>
 
     </div>
 
-
-
+</section>
+</div>
+</main>
+<div class="m-2">
+    <a class="btn btn-secondary btn-lg text-light" href="/logout" role="button"> Logout</a>
+</div>
     <script src="/js/search.js"></script>
 <%- include('partials/footer') -%>

@@ -2,7 +2,7 @@
 
 <main class="container">
     <div class="row justify-content-center">
-        <section class="col-md-6 mt-2">
+        <section class="d-lg-flex align-items-center justify-content-between">
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>

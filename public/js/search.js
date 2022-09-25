@@ -8,13 +8,15 @@ function getBook(){
         .then(res => res.json())
         .then(data => {
           
-            document.querySelector('h2').innerText = data.items[0].volumeInfo.title
             document.querySelector('img').src = data.items[0].volumeInfo.imageLinks.thumbnail
+            document.querySelector('h2').innerText = data.items[0].volumeInfo.title
             document.querySelector('h4').innerText = data.items[0].volumeInfo.authors
             document.querySelector('h3').innerText = data.items[0].volumeInfo.description
             
             const button = document.createElement('button')
                 document.querySelector(".bookResult").appendChild(button)
+                button.classList.add("btn", "btn-info", "btn-lg", "text-light")
+                button.textContent = "Add Book"
                 button.addEventListener('click', addBook)
         }
             
