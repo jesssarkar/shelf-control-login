@@ -8,7 +8,7 @@ function getBook(){
         .then(res => res.json())
         .then(data => {
           
-            document.querySelector('img').src = data.items[0].volumeInfo.imageLinks.thumbnail
+            document.querySelector('#bookimg').src = data.items[0].volumeInfo.imageLinks.thumbnail
             document.querySelector('h2').innerText = data.items[0].volumeInfo.title
             document.querySelector('h4').innerText = data.items[0].volumeInfo.authors
             document.querySelector('h3').innerText = data.items[0].volumeInfo.description
@@ -36,7 +36,7 @@ async function addBook(){
         body: JSON.stringify({
             name: document.querySelector('h2').innerText,
             author: document.querySelector('h4').innerText,
-            thumbnail: document.querySelector('img').src,
+            thumbnail: document.querySelector('#bookimg').src,
             
         })
     })

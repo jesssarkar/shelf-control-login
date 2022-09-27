@@ -1,8 +1,8 @@
 <%- include('partials/header') -%>
 
 <main class="container">
-    <div class="row justify-content-center">
-        <section class="d-lg-flex align-items-center justify-content-between">
+    
+        
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -13,6 +13,8 @@
             <div class="alert alert-info"><%= el.msg %></div>
         <% }) %>    
     <% } %>
+    <section class="d-lg-flex align-items-center justify-content-between">
+        <div class="d-grid gap-2 col-md-4 mx-auto m-5" >
     <form action="/signup" method="POST">
         <div class="mb-3">
             <label for="userName" class="form-label">User Name</label>
@@ -33,9 +35,11 @@
         </div>
         <button type="submit" class="btn text-light btn-info btn-lg">Submit</button>
     </form>
-    <img class="img-fluid mx-auto pt-5" src="/imgs/undraw_book_lover_re_rwjy.svg" alt="">
+</div>
+    <img class="img-fluid pt-5" src="/imgs/undraw_book_lover_re_rwjy.svg" alt="">
+    
         </section>
-    </div>
+   
 </main>
 
  <%- include('partials/footer') -%>

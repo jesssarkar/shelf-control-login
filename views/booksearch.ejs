@@ -1,4 +1,7 @@
 <%- include('partials/header') -%>
+<div class="m-2">
+    <a class="btn btn-outline-secondary btn-lg" href="/books" role="button">Vote for a Book</a>
+</div>
 <main class="container">
     <div class="row justify-content-center">
       <section class="col-md-6 mt-2">
@@ -14,7 +17,7 @@
 	<button type="button" name="button" class="btn text-light btn-info btn-lg mb-5">Get Book</button>
 
     <div class="bookResult mb-5">
-	<img src="" alt="">
+	<img id="bookimg" src="" alt="">
 	<h2></h2>
 	<h4></h4>
 	<h3></h3>
@@ -25,7 +28,7 @@
 </div>
 </main>
 <div class="m-2">
-    <a class="btn btn-secondary btn-lg text-light" href="/logout" role="button"> Logout</a>
+    <a class="btn btn-outline-secondary btn-lg" href="/logout" role="button"> Logout</a>
 </div>
     <script src="/js/search.js"></script>
 <%- include('partials/footer') -%>
