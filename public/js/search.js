@@ -13,11 +13,12 @@ function getBook(){
             document.querySelector('h4').innerText = data.items[0].volumeInfo.authors
             document.querySelector('h3').innerText = data.items[0].volumeInfo.description
             
-            const button = document.createElement('button')
+            if(document.body.contains(document.querySelector('.removeButton'))){console.log('button exsists')}
+            else{const button = document.createElement('button')
                 document.querySelector(".bookResult").appendChild(button)
-                button.classList.add("btn", "btn-info", "btn-lg", "text-light")
+                button.classList.add("btn", "btn-info", "btn-lg", "text-light", "removeButton")
                 button.textContent = "Add Book"
-                button.addEventListener('click', addBook)
+                button.addEventListener('click', addBook)}
         }
             
     
@@ -37,7 +38,7 @@ async function addBook(){
             name: document.querySelector('h2').innerText,
             author: document.querySelector('h4').innerText,
             thumbnail: document.querySelector('#bookimg').src,
-            
+            description:document.querySelector('h3').innerText
         })
     })
         const data = await response.json()

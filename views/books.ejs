@@ -16,7 +16,9 @@
         <div class="card bg-light col-md-6 col-lg-3 mt-2" >
         <div class="card-body text-center">
         
-            <div><img class="" src=<%= info[i].thumbnail %>></div>
+            <div><a href="/books/book/<%= info[i]._id%>">
+                <img class="" src=<%= info[i].thumbnail %>>
+            </a></div>
             <div class="card-text mt-1"><%= info[i].name %></div>
             <div class="card-text"n><%= info[i].author %></div>
             <span class="my-1"><%= info[i].likes %></span><span> Votes</span>

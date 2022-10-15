@@ -1,0 +1,21 @@
+<%- include('partials/header') -%>
+<div class="m-2">
+    <a class="btn btn-outline-secondary btn-lg" href="/books" role="button">Back to Vote</a>
+</div>
+
+<div class="text-center">
+        
+    <div>
+        <img class="" src=<%= book.thumbnail %>>
+    </a></div>
+    <h1 class="display-1"><%= book.name %></h1>
+    <h4 class="display-4"><%= book.author %></h4>
+    <p class="p-3"><%= book.description%></p>
+   
+
+
+</div>
+<div class="m-2">
+    <a class="btn btn-outline-secondary btn-lg" href="/logout" role="button"> Logout</a>
+</div>
+<%- include('partials/footer') -%>

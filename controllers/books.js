@@ -17,6 +17,16 @@ module.exports = {
         res.render('booksearch.ejs')
     },
 
+    viewBookbyID: async (req, res) =>{
+        try {
+            const book = await Book.findById(req.params.id);
+            res.render("book.ejs", { book: book});
+        }catch(err){
+            console.log(err)
+          }
+
+    },
+
     addBook: async (req, res) => {
         try{
         await Book.create(
@@ -26,6 +36,7 @@ module.exports = {
                     thumbnail: req.body.thumbnail,
                     likes: 0,
                     userId: req.user.id,
+                    description: req.body.description,
                    
             },
         )
